@@ -44,8 +44,8 @@ export const Details = () => {
   const DetailTab = ():JSX.Element => {
     if (tab === 'profile') return (
       <>
-        <Row className='mb-3'>
-          <Col md={2}>
+        <Row className='mb-3 mt-3'>
+          <Col md={2} xs={3}>
             <div className="profile-tab-category text-center fw-bold"> Type </div>
           </Col>
           <Col className='text-capitalize'>
@@ -54,7 +54,7 @@ export const Details = () => {
         </Row>
 
         <Row className='mb-3'>
-          <Col md={2}>
+          <Col md={2} xs={3}>
             <div className="profile-tab-category text-center fw-bold"> Height </div>
           </Col>
           <Col>
@@ -63,7 +63,7 @@ export const Details = () => {
         </Row>
 
         <Row className='mb-3'>
-          <Col md={2}>
+          <Col md={2} xs={3}>
             <div className="profile-tab-category text-center fw-bold"> Weight </div>
           </Col>
           <Col>
@@ -188,7 +188,10 @@ export const Details = () => {
               </div>
             </Row>
             <Row>
-              <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon?.id}.png`}>
+              <img
+                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon?.id}.png`}
+                className='img-max-size'
+              >
               </img>
             </Row>
           </Col>

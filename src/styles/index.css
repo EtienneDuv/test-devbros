@@ -17,6 +17,10 @@
   transform: translate(15%, -120%);
   text-align: center;
 }
+img.img-max-size {
+  max-width: 255px;
+  max-height: 255px;
+}
 .no-link-style a:link, .no-link-style a:visited, .no-link-style a:hover, .no-link-style a:active { 
   text-decoration: none;
 }

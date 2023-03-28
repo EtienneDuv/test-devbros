@@ -1,4 +1,4 @@
-import {useRef} from 'react';
+import {useState, useEffect} from 'react';
 import {MyNavbar} from './components';
 import Container from 'react-bootstrap/Container';
 import {Routes, Route} from 'react-router-dom';
@@ -19,9 +19,27 @@ const queryClient = new QueryClient({
 export const JwtContext = createContext<string|null>(null);
 
 export const Router = () => {
-  const windowSize = useRef([window.innerWidth, window.innerHeight]);
-  const width = windowSize.current[0];
-  const isSmallWidth = width<700;
+  function useWindowSize () {
+    const [windowSize, setWindowSize] = useState({
+      width : 0,
+      height: 0,
+    });
+    useEffect(() => {
+      function handleResize () {
+        setWindowSize({
+          width : window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+      window.addEventListener('resize', handleResize);
+      handleResize();
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+    return windowSize;
+  }
+
+  const windowSize = useWindowSize();
+  const isSmallWidth = windowSize.width<1100;
 
   return (
     <Container className={[
