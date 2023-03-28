@@ -5,7 +5,7 @@ import {Routes, Route} from 'react-router-dom';
 import {QueryClient, QueryClientProvider} from 'react-query';
 import {ReactQueryDevtools} from 'react-query/devtools';
 import {createContext} from 'react';
-import {Home, NotFound} from './pages';
+import {Home, Details, NotFound} from './pages';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -32,7 +32,7 @@ export const Router = () => {
         <MyNavbar />
         <Routes>
           <Route index element={<Home />} />
-          {/* <Route path="/article/:id" element={<Article />} /> */}
+          <Route path="/pokemon/:id" element={<Details />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <ReactQueryDevtools initialIsOpen={false}/>

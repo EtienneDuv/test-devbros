@@ -14,3 +14,25 @@ export const getAllPokemons = () => fetchGql({
     }
   }`
 });
+
+export const getPokemon = (id: number) => fetchGql({
+  body: `query {
+    targetPokemon: pokemon_v2_pokemon_by_pk (id: ${id}) {
+      id
+      name
+      height
+      weight
+      pokemon_v2_pokemontypes {
+        pokemon_v2_type {
+          name
+        }
+      }
+      pokemon_v2_pokemonstats {
+        base_stat
+        pokemon_v2_stat {
+          name
+        }
+      }
+    }
+  }`
+});

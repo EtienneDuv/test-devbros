@@ -1,13 +1,13 @@
 import {useState} from 'react';
-import {Row, Spinner} from 'react-bootstrap';
+import {Row, Spinner, Col, Form} from 'react-bootstrap';
 import {useQuery, UseQueryOptions} from 'react-query';
 import {getAllPokemons} from '../services/gql';
 import {ErrorAlerts, PokemonCard} from '../components';
-import {PokemonFetchedData} from '../@types/interfaces';
+import {Pokemon_V2_Pokemonspecies} from '../@types/gql';
 
-// SPRITE /media/sprites/pokemon/1.png
 export const Home = () => {
-  const [pokemons, setPokemons] = useState<PokemonFetchedData[]>([]);
+  const [pokemons, setPokemons] = useState<Pokemon_V2_Pokemonspecies[]>([]);
+  const [searchString, setSearchString] = useState<string>('');
   const [errors, setErrors] = useState<object[]>([]);
 
   const {isFetching} = useQuery({
@@ -37,14 +37,33 @@ export const Home = () => {
 
   return (
     <div>
-      {pokemons.map((el, i) => {
-        const pokemon = {
-          ...el,
-          spriteUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${el.id}.png`
-        };
+      <Row className='my-2'>
+        <Col className='mx-50'>
+          <Form.Control
+            placeholder="Search pokemon"
+            onChange={(event) => {
+              setTimeout(() => {
+                setSearchString(event?.target.value);
+              }, 300);
+            }}
+          />
+        </Col>
+      </Row>
+      <Row>
+        {pokemons
+          .filter(el => el.name.includes(searchString))
+          .map((el, i) => {
+            const pokemon = {
+              ...el,
+              spriteUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${el.id}.png`
+            };
 
-        return <PokemonCard pokemon={pokemon} key={i} />;
-      })}
+            return <Col md={3} sm={6} key={i}>
+              <PokemonCard pokemon={pokemon} />
+            </Col>;
+          })
+        }
+      </Row>
     </div>
   );
 };

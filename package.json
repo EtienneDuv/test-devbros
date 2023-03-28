@@ -1,5 +1,5 @@
 {
-  "name": "applifting",
+  "name": "devbros",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,8 +8,8 @@
     "preview": "vite preview",
     "lint": "eslint src/**/* --fix",
     "codegen": "graphql-codegen --config codegen.ts",
-    "docker:build": "docker build -t react_applifting .",
-    "docker:run": "docker run --name react -p 8080:80 -d react_applifting"
+    "docker:build": "docker build -t react_devbros .",
+    "docker:run": "docker run --name react -p 8080:80 -d react_devbros"
   },
   "dependencies": {
     "bootstrap-icons": "^1.10.3",

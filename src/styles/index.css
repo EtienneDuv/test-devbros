@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
 .dark {
   filter: invert(100%);
   transition: 0.4s;
@@ -15,6 +17,53 @@
   transform: translate(15%, -120%);
   text-align: center;
 }
+.no-link-style a:link, .no-link-style a:visited, .no-link-style a:hover, .no-link-style a:active { 
+  text-decoration: none;
+}
+.card-footer {
+  color: #fcfcfc !important;
+  background-color: #ff3e4e !important;
+  font-family: 'Poppins', sans-serif;
+}
+.text-red {
+  color: #ff3e4e;
+}
+.mx-50{
+  margin-left: 25%;
+  margin-right: 25%;
+}
+.border-simple {
+  border: solid #e8e8e8 1px;
+  border-radius: 3px;
+}
+.detail-image-container {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 10px;
+}
+.detail-image-container img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%
+}
+.profile-tab-category {
+  background-color: #fce8ea;
+  border-radius: 3px;
+  padding: 5px 0px;
+}
+.progress-bar-custom {
+  background-color: #fce8ea !important;
+  height: 33px !important;
+}
+.progress-bar-custom .progress-bar {
+  background-color: #ff3e4e !important;
+  padding-left: 20px;
+  text-align: start;
+  font-size: large;
+  font-weight: 650;
+}
+
 body {
   overflow-y: scroll; /* Show vertical scrollbar */
+  background-color: #ddf1fc !important;
 }

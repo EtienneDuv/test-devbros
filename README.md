@@ -1,4 +1,4 @@
-# Pokedex Blog Engine frontend exercise 
+# Pokedex - DevBros technical test
 
 - [Design](https://xd.adobe.com/view/932f44d0-1051-4995-bda3-49d62dd15b5d-c67c/)
 

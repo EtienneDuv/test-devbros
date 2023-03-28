@@ -1,1 +1,1 @@
-export {default as pokedex} from './pokedex.svg';
+export {default as pokeball} from './pokeball.svg';
