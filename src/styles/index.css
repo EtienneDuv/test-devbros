@@ -1,0 +1,20 @@
+.dark {
+  filter: invert(100%);
+  transition: 0.4s;
+}
+.light {
+  transition: 0.4s;
+}
+.comment {
+  border-left: solid black 3px;
+  margin-left: 15px;
+  padding-left: 15px;
+}
+.popup {
+  width:70%;
+  transform: translate(15%, -120%);
+  text-align: center;
+}
+body {
+  overflow-y: scroll; /* Show vertical scrollbar */
+}
