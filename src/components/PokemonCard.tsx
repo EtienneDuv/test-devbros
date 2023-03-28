@@ -13,7 +13,7 @@ export const PokemonCard = ({pokemon}: Args) => {
       <NavLink to={`/pokemon/${pokemon.id}`} >
         <Card className='mb-3'>
           <Card.Img variant="top" loading='lazy' src={pokemon.spriteUrl} className='p-3' />
-          <Card.Body className='card-footer fw-bold'>
+          <Card.Body className='card-footer'>
             <div className="text-capitalize text-center">
               #{pokemon.id} {pokemon.name}
             </div>
